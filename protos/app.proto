@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "WebApplication2";
+
+service GrpcApp {
+    rpc GetAllApps (GetAllRequest) returns (AppResponse);
+}
+
+message GetAllRequest {}
+
+message GrpcAppModel{
+    int32 personId = 1;
+    string FirstName = 2;
+    string LastName = 3;
+}
+
+message AppResponse {
+    repeated GrpcAppModel platform = 1;
+}
+
